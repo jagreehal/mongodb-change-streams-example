@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mongodb:
+    build:
+      context: ./mongodb-6
+    environment:
+      MONGO_REPLICA_PORT: 27017
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
